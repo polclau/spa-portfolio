@@ -10,12 +10,11 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class SkillFactory extends Factory
 {
-    protected $fillable = [
-        'name',
-        'color',
-
-    ];
-
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
     public function definition()
     {
         $color = $this
@@ -25,7 +24,6 @@ class SkillFactory extends Factory
         return [
             'name' => $this->faker->unique()->word(),
             'color' => $color,
-
         ];
     }
 }

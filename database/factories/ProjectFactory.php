@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,18 +10,24 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ProjectFactory extends Factory
 {
-    protected $fillable = [
-        'title',
-        'description',
-        'color',
-        'icon_name',
 
-    ];
+    //
 
     public function definition()
     {
-        return [
-            //
-        ];
+        $colorName = $this
+        ->faker
+        ->randomElement(Project::getAvailableTextColors());
+
+    $iconName = $this
+        ->faker
+        ->randomElement(Project::getAvailableIcons());
+
+    return [
+        'title' => $this->faker->unique()->word(2, true),
+        'description' => $this->faker->sentence(),
+        'color' => $colorName,
+        'icon_name' => $iconName,
+    ];
     }
 }

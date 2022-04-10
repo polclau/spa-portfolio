@@ -2,6 +2,7 @@
 import { Head, Link } from '@inertiajs/inertia-vue3';
 import { defineComponent } from '@vue/runtime-core';
 import JetApplicationMark  from '@/Jetstream/ApplicationMark'
+import JetButton from '@/Jetstream/Button'
 import Section from '@/Components/Section'
 
 export default defineComponent({
@@ -9,6 +10,7 @@ export default defineComponent({
         Head,
         Link,
         JetApplicationMark,
+        JetButton,
         Section,
 
     },
@@ -59,20 +61,66 @@ text-gray-300
             text-gray-300
             uppercase
         ">
-        Hi! This is Claudio.
-        I'm a software engineer
-        and I would like work with you.</p>
+        Hi! I'm Claudio,
+         a software engineer
+         and I would like work with you.</p>
+         <div class="flex items-end border-b-2 border-gray-500 pb-2">
+        <p  class="
+                    font-bold
+                    mr-5
+                    text-gray-500
+                    text-xl
+                ">
+                Want to know more ?</p>
+        <jet-button  class="
+                    bg-green-400
+                    rounded
+                    font-bold
+                    text-sm
+                    text-gray-800
+                    hover:bg-green-500
+                    ">
+            Let's Chat
+        </jet-button>
+
+
     </div>
+        </div>
+        <div class="animate-pulse mt-3 text-gray-300 text-center text-9xl">
+        <a href="#skills">&#8675;</a>
+        </div>
 </Section>
 
-<Section class="bg-gray-200
+<Section id="skills" class="bg-gray-200
 text-gray-800 h-screen">
     <h2 text-xl font-bold pt-3>Skills</h2>
+    <div class="flex justify-center mt-10">
+            <jet-button class="
+                bg-indigo-800
+                rounded
+                font-bold
+                text-sm
+                text-gray-200
+                hover:bg-indigo-700
+            ">
+            </jet-button>
+        </div>
 </Section>
 
 <Section class="bg-gray-600
 text-gray-200  h-screen">
     <h2 text-xl font-bold pt-3>Projects</h2>
+     <div class="flex justify-center mt-10">
+            <jet-button class="
+                bg-purple-100
+                rounded
+                font-bold
+                text-sm
+                text-gray-800
+                hover:bg-purple-200
+                ">
+            </jet-button>
+        </div>
 </Section>
 
 <Section class="
