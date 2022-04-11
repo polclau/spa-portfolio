@@ -6,6 +6,7 @@ import JetButton from '@/Jetstream/Button'
 
 import Section from '@/Components/Section'
 import Skill from '@/Components/Skill'
+import Project from '@/Components/Project'
 
 export default defineComponent({
     components: {
@@ -15,6 +16,7 @@ export default defineComponent({
         JetButton,
         Section,
         Skill,
+        Project,
 
     },
 
@@ -22,6 +24,7 @@ export default defineComponent({
         canLogin: Boolean,
         canRegister: Boolean,
         skills: Object,
+        projects: Object,
     }
     })
 </script>
@@ -125,6 +128,15 @@ text-gray-800 h-screen">
 text-gray-200  h-screen">
     <h2 class="text-6xl font-bold pt-3">Projects</h2>
 
+    <div v-for="(project, index) in projects">
+            <Project
+                :title="project.title"
+                :description="project.description"
+                :color="project.color"
+            >
+            </Project>
+        </div>
+
      <div class="flex justify-center mt-10">
             <jet-button class="
                 bg-purple-100
@@ -149,9 +161,17 @@ text-gray-200  h-screen">
 ">
     <p>&copy;Claudio Polo.All rights reserved.</p>
     <div class="flex justify-evenly items-center">
-        Github
-        Twitter
-        Linkedin
+        <Link class="border-b pb-1 px-2 hover:text-gray-50" href="#" target="_blank">
+                GitHub
+            </Link>
+
+            <Link class="border-b pb-1 px-2 hover:text-gray-50" href="#" target="_blank">
+                Twitter
+            </Link>
+
+            <Link class="border-b pb-1 px-2 hover:text-gray-50" href="#" target="_blank">
+                Linkedin
+            </Link>
     </div>
 </Section>
 </template>

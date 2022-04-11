@@ -2,6 +2,7 @@
 
 use Inertia\Inertia;
 use App\Models\Skill;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 
@@ -21,6 +22,7 @@ Route::get('/', function () {
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'skills' => Skill::all(),
+        'projects' => Project::all(),
                     ]);
 });
 
