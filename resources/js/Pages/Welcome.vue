@@ -3,7 +3,9 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 import { defineComponent } from '@vue/runtime-core';
 import JetApplicationMark  from '@/Jetstream/ApplicationMark'
 import JetButton from '@/Jetstream/Button'
+
 import Section from '@/Components/Section'
+import Skill from '@/Components/Skill'
 
 export default defineComponent({
     components: {
@@ -12,12 +14,14 @@ export default defineComponent({
         JetApplicationMark,
         JetButton,
         Section,
+        Skill,
 
     },
 
     props: {
         canLogin: Boolean,
         canRegister: Boolean,
+        skills: Object,
     }
     })
 </script>
@@ -93,7 +97,15 @@ text-gray-300
 
 <Section id="skills" class="bg-gray-200
 text-gray-800 h-screen">
-    <h2 text-6xl font-bold pt-3>Skills</h2>
+    <h2 class="text-6xl font-bold pt-3">Skills</h2>
+
+    <div class="grid grid-cols-2">
+            <div v-for="skill in skills">
+                <Skill :background="skill.color">
+                    {{ skill.name }}
+                </Skill>
+            </div>
+        </div>
 
     <div class="flex justify-center mt-10">
             <jet-button class="
@@ -111,7 +123,7 @@ text-gray-800 h-screen">
 
 <Section class="bg-gray-600
 text-gray-200  h-screen">
-    <h2 text-6xl font-bold pt-3>Projects</h2>
+    <h2 class="text-6xl font-bold pt-3">Projects</h2>
 
      <div class="flex justify-center mt-10">
             <jet-button class="
