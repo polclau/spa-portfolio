@@ -93,7 +93,8 @@ text-gray-300
 
 <Section id="skills" class="bg-gray-200
 text-gray-800 h-screen">
-    <h2 text-xl font-bold pt-3>Skills</h2>
+    <h2 text-6xl font-bold pt-3>Skills</h2>
+
     <div class="flex justify-center mt-10">
             <jet-button class="
                 bg-indigo-800
@@ -101,15 +102,17 @@ text-gray-800 h-screen">
                 font-bold
                 text-sm
                 text-gray-200
-                hover:bg-indigo-700
-            ">
+                hover:bg-indigo-700"
+            >
+            Get in Touch.
             </jet-button>
         </div>
 </Section>
 
 <Section class="bg-gray-600
 text-gray-200  h-screen">
-    <h2 text-xl font-bold pt-3>Projects</h2>
+    <h2 text-6xl font-bold pt-3>Projects</h2>
+
      <div class="flex justify-center mt-10">
             <jet-button class="
                 bg-purple-100
@@ -117,9 +120,11 @@ text-gray-200  h-screen">
                 font-bold
                 text-sm
                 text-gray-800
-                hover:bg-purple-200
-                ">
+                hover:bg-purple-200"
+                >
+                Know More.
             </jet-button>
+
         </div>
 </Section>
 
