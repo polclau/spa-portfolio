@@ -1,6 +1,6 @@
 <script>
 import { Head, Link } from '@inertiajs/inertia-vue3';
-import { defineComponent } from '@vue/runtime-core';
+import { defineAsyncComponent, defineComponent } from '@vue/runtime-core';
 import JetApplicationMark  from '@/Jetstream/ApplicationMark'
 import JetButton from '@/Jetstream/Button'
 
@@ -25,8 +25,22 @@ export default defineComponent({
         canRegister: Boolean,
         skills: Object,
         projects: Object,
+    },
+
+    methods:{
+        componentName(index) {
+            return defineAsyncComponent(()=>
+            import (
+                        '@heroicons/vue/solid/'
+                        + this.projects[index].icon_name
+                        + 'Icon.js'
+                    )
+            )
+        }
     }
-    })
+
+})
+
 </script>
 
 <template>
@@ -134,6 +148,7 @@ text-gray-200  h-screen">
                 :description="project.description"
                 :color="project.color"
             >
+            <component :is="componentName(index)"></component>
             </Project>
         </div>
 
