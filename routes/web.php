@@ -1,9 +1,11 @@
 <?php
+use Inertia\Inertia;
 use App\Models\Skill;
 use App\Models\Project;
-use Illuminate\Foundation\Application;
+use App\Mail\ContactedMessage;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,10 @@ Route::get('/', function () {
     ]);
 });
 
+
+Route::post('contact', [ContactController::class, 'contact'])
+    ->name('contact');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -32,4 +38,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+});
+
+Route::get('test', function() {
+    return new ContactedMessage('test@test.com', 'Hello, please send me CV');
 });
