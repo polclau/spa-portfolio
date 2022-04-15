@@ -16,13 +16,18 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require('postcss-import'),
         require('tailwindcss'),
     ])
-    .alias({
-        '@': 'resources/js',
-    });
+    .webpackConfig(require('./webpack.config'));
+
 
 if (mix.inProduction()) {
     mix.version();
 }
-mix.browserSync({
-    proxy: "http://localhost:8000"
-});
+
+/*mix.browserSync({
+    proxy: 'whatever.test',
+    open: false,
+});*/
+
+if (!mix.inProduction()) {
+    mix.browserSync({open:false});
+}

@@ -1,11 +1,9 @@
 <?php
-
-use Inertia\Inertia;
 use App\Models\Skill;
 use App\Models\Project;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +21,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'skills' => Skill::all(),
         'projects' => Project::all(),
-                    ]);
+    ]);
 });
 
 Route::middleware([
