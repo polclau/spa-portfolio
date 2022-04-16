@@ -29,4 +29,3 @@ Route::resource('skills', SkillController::class)
 
 Route::resource('projects', ProjectController::class)
     ->except(['create', 'show', 'edit']);
-
